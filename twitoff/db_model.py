@@ -21,7 +21,7 @@ class Tweet(db.Model):
     text = db.Column(db.Unicode(300))
     #user = db.relationship('User', back_populates='tweet')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', back_populates='tweets')
+    user = db.relationship('User') #, back_populates='tweets')
     
     def __repr__(self):
         return '<Tweet %r>' % self.text
