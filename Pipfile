@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 flask = "*"
 flask-sqlalchemy = "*"
+tweepy = "*"
+basilica = "*"
+python-dotenv = "*"
+twitter-scraper = "*"
 
 [dev-packages]
 
