@@ -10,7 +10,7 @@ Update - Granted twitter dev access, and this module is now complete!
 
 
 ### What was particularly interesting or surprising about the topic(s) today?
-Module 1:  I am surprised by understandable it was.
+Module 1:  I am surprised by how understandable it was.
 
 Module 2:  I find it very interesting how the flask shell runs all of the script files together to form this program.
 Update - After getting twitter dev access, the ease of adding users/tweets to db was a surprisingly smooth process.

@@ -1,6 +1,6 @@
 from os import getenv
 import basilica
-import tweepy  # or twitter_scraper
+import tweepy
 from dotenv import load_dotenv
 from .db_model import db, User, Tweet
 
