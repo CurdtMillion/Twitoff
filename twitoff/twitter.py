@@ -40,7 +40,7 @@ def add_user_tweepy(username):
         # Loop over tweets, get embedding and add to Tweet table
         for tweet in tweets:
 
-            # Get an examble basilica embedding for first tweet
+            # Get an example basilica embedding for first tweet
             embedding = BASILICA.embed_sentence(tweet.full_text, model='twitter')
 
             # Add tweet info to Tweet table
