@@ -10,8 +10,12 @@ tweepy = "*"
 basilica = "*"
 python-dotenv = "*"
 twitter-scraper = "*"
+scikit-learn = "*"
+pandas = "*"
 
 [dev-packages]
+jupyter = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"

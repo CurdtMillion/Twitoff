@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from .db_model import db, User
 from .twitter import add_user_tweepy
+from .predict import predict_user
 
 def create_app():
     '''Create and configure an instance of the Flask application'''
@@ -27,5 +28,22 @@ def create_app():
             message = "Error adding {}: {}".format(name, e)
             tweets = []
         return render_template('user.html', title=name, tweets=tweets, message=message)
+
+    @app.route('/compare', methods=['POST'])
+    def compare(message=''):
+        user1 = request.values['user1']
+        user2 = request.values['user2']
+        tweet_text = request.values['tweet_text']
+
+        if user1 == user2:
+            message = 'Cannot compare a user to themselves'
+        else:
+            prediction = predict_user(user1, user2, tweet_text)
+
+            message = '"{}" is more likely to be said by {} than {}'.format(
+                tweet_text, user1 if prediction else user2, user2 if prediction else user1
+            )
+
+        return render_template('prediction.html', title='Prediction', message=message)
 
     return app
