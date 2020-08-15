@@ -1,6 +1,6 @@
 from os import getenv
 import basilica
-import tweepy
+import tweepy  # or twitter_scraper
 from dotenv import load_dotenv
 from .db_model import db, User, Tweet
 
@@ -12,6 +12,8 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
                               getenv('TWITTER_ACCESS_TOKEN_SECRET'))
 TWITTER = tweepy.API(TWITTER_AUTH)
 BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
+
+# DEFAULT_USERS = ['nasa', 'barackobama', '...']
 
 def add_user_tweepy(username):
     '''Add a user and their tweets to database'''
@@ -121,3 +123,9 @@ def add_user_history(username):
         # If no errors happend than commit the records
         db.session.commit()
         print('Successfully saved tweets to DB!')
+
+
+def update_all_users():
+    '''Update all tweets for all Users in the User table'''
+    for user in User.query.all():
+        add_user_tweepy()

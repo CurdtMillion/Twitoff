@@ -26,4 +26,6 @@ Module 1:  This time trying to get the data onto the db was a little challenging
 then readded the User/Tweet info one at a time and commited after each User/Tweet. This worked.
 
 Module 2:  Getting errors: 'list' object has no attribute 'id' & Class 'builtins.list' is not mapped. I am trying to figure out what code I need for the twitter scraper and what I do not need from Bruno's example of twitter.py.
-Update - After getting twitter dev access, I encountered no errors.  
+Update - After getting twitter dev access, I encountered no errors. 
+
+Module 3:  
