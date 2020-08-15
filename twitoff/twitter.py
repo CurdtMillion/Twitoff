@@ -1,6 +1,6 @@
 from os import getenv
 import basilica
-import tweepy  # or twitter_scraper
+import tweepy
 from dotenv import load_dotenv
 from .db_model import db, User, Tweet
 
@@ -13,7 +13,6 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
 TWITTER = tweepy.API(TWITTER_AUTH)
 BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
 
-# DEFAULT_USERS = ['nasa', 'barackobama', '...']
 
 def add_user_tweepy(username):
     '''Add a user and their tweets to database'''
@@ -42,7 +41,7 @@ def add_user_tweepy(username):
         # Loop over tweets, get embedding and add to Tweet table
         for tweet in tweets:
 
-            # Get an examble basilica embedding for first tweet
+            # Get an example basilica embedding for first tweet
             embedding = BASILICA.embed_sentence(tweet.full_text, model='twitter')
 
             # Add tweet info to Tweet table
@@ -57,7 +56,7 @@ def add_user_tweepy(username):
         raise e
 
     else:
-        # If no errors happend than commit the records
+        # If no errors happened, then commit the records
         db.session.commit()
 
 

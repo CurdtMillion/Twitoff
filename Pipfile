@@ -12,6 +12,8 @@ python-dotenv = "*"
 twitter-scraper = "*"
 scikit-learn = "*"
 pandas = "*"
+gunicorn = "*"
+psycopg2 = "*"
 
 [dev-packages]
 jupyter = "*"
